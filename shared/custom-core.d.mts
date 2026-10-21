@@ -1,0 +1,11 @@
+import type { CustomPricing, CustomPrice, DesignLayer, DesignProject, DesignSide, PrintArea } from './custom-types';
+export const DEFAULT_PRICING: CustomPricing;
+export const SHAPES: string[];
+export const SIDE_LABELS: Record<DesignSide, string>;
+export const AREA_LABELS: Record<PrintArea, string>;
+export const PRINT_REGIONS: Record<PrintArea, { x: number; y: number; width: number; height: number }>;
+export function calculateCustomPrice(project: DesignProject, basePrice: number, pricing?: CustomPricing): CustomPrice;
+export function renderLayerSvg(layer: DesignLayer): string;
+export function renderArtworkSvg(project: DesignProject, face?: DesignSide): string;
+export function renderShirtSvg(project: DesignProject, colorHex?: string, face?: DesignSide): string;
+export function svgDataUrl(svg: string): string;

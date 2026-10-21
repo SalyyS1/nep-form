@@ -1,0 +1,9 @@
+{
+  "createdAt": "2026-10-19",
+  "purpose": "Illustrative local custom-shirt preview, not a photograph of manufactured NẾP stock.",
+  "generator": "Built-in image_gen; generation then transparent background extraction.",
+  "sourceSheet": "exec-506a6712-f725-4278-90c2-f22eb86c8274.png",
+  "prompt": "Two identical premium oversized ecru cotton T-shirts, front left and back right, orthographic ghost-mannequin view, ribbed collar, authentic fabric weave and soft folds, transparent isolated background; no graphics, text, hanger, person or cast background shadows. Preserve fully opaque cloth and clear alpha outside garment silhouettes.",
+  "processing": "Split asset sheet into front/back without modifying the garment, resize600px wide, WebP85 preserving alpha. Embedded in shared/shirt-mockup-data.mjs so private SVG previews contain no remote resources.",
+  "files": ["/images/nep-cotton-front-v2.webp", "/images/nep-cotton-back-v2.webp"]
+}

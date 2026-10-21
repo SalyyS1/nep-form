@@ -1,0 +1,24 @@
+[Unit]
+Description=NEP FORM storefront and API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nepform
+Group=nepform
+WorkingDirectory=/opt/nep-form/current
+EnvironmentFile=/etc/nep-form/app.env
+ExecStart=/opt/nep-form/runtime/current/bin/node server/index.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=35
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+UMask=0077
+MemoryMax=768M
+
+[Install]
+WantedBy=multi-user.target

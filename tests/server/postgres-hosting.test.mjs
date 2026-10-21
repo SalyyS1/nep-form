@@ -1,0 +1,123 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, rm, writeFile, readFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { once } from 'node:events';
+import { embeddedPostgres } from './postgres-test-pool.mjs';
+import { initializePostgres, snapshotPostgres, backupPostgres, restorePostgres, createAdministrator } from '../../server/postgres-maintenance.mjs';
+import { openPostgresStore } from '../../server/postgres-store.mjs';
+import { startServer } from '../../server/index.mjs';
+import { runtimeConfig } from '../../server/runtime-config.mjs';
+import { customerRoute } from '../../server/cart-and-addresses.mjs';
+import { hashPassword } from '../../server/common.mjs';
+import { product, cart, address, expectedQuote } from './test-helpers.mjs';
+
+test('PostgreSQL powers hosted auth, cart/order stock, private custom artwork, chat, admin and safe backup restore', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'nep-postgres-'));
+  let pool, server;
+  t.after(async () => {
+    if (server?.listening) await stop();
+    else if (pool) await pool.end();
+    await rm(directory, { recursive: true, force: true });
+  });
+  const catalogPath = join(directory, 'catalog.json');
+  await writeFile(catalogPath, JSON.stringify([product, { ...product, id: 'blank', slug: 'blank', isCustomBase: true }]));
+  pool = await embeddedPostgres(join(directory, 'database'));
+  const staticRoot = join(directory, 'dist');
+  const { mkdir } = await import('node:fs/promises'); await mkdir(staticRoot);
+  await writeFile(join(staticRoot, 'index.html'), '<!doctype html><h1>Nếp production fixture</h1>');
+  await writeFile(join(staticRoot, 'app.js'), 'console.log("app")');
+  assert.equal((await initializePostgres(pool, { catalogPath })).initialized, true);
+  const store = await openPostgresStore({ pool });
+  assert.equal((await store.list('user')).length, 0);
+  await createAdministrator(store, { email: 'owner@example.test', password: 'PrivatePassword@2026' });
+  assert.equal((await initializePostgres(pool, { catalogPath })).initialized, false);
+  server = await startServer({ pool, port: 0, host: '127.0.0.1', production: true, appOrigin: 'https://shop.example.test', staticRoot });
+  async function stop() { server.close(); await once(server, 'close'); await server.closed; }
+  function client() {
+    let cookie = '';
+    return async (path, method = 'GET', body, extra = {}) => {
+      const response = await fetch(`http://127.0.0.1:${server.address().port}${path}`, { method, headers: { ...(cookie ? { Cookie: cookie } : {}), ...(body ? { 'Content-Type': 'application/json' } : {}), ...extra }, body: body ? JSON.stringify(body) : undefined });
+      if (response.headers.get('set-cookie')) cookie = response.headers.get('set-cookie').split(';')[0];
+      const data = response.headers.get('content-type')?.includes('application/json') ? await response.json() : await response.text();
+      return { status: response.status, data, headers: response.headers };
+    };
+  }
+  const alice = client(), bob = client(), admin = client(), guest = client();
+  assert.equal((await guest('/quan-tri')).status, 200);
+  assert.match((await guest('/quan-tri')).headers.get('content-security-policy'), /frame-ancestors 'none'/);
+  assert.equal((await guest('/api/health')).headers.get('x-frame-options'), 'DENY');
+  assert.equal((await guest('/', 'GET', undefined, { 'Sec-Fetch-Site':'cross-site', 'Sec-Fetch-Mode':'navigate' })).status, 200);
+  assert.match((await guest('/quan-tri')).data, /Nếp production fixture/);
+  assert.equal((await guest('/.env')).status, 404);
+  assert.equal((await guest('/server/auth.mjs')).status, 404);
+  assert.equal((await guest('/app.js')).headers.get('content-type'), 'text/javascript; charset=utf-8');
+  assert.equal((await guest('/api/admin')).status, 401);
+  assert.equal((await guest('/api/bootstrap')).data.mode, 'production');
+  assert.equal((await guest('/api/auth/login', 'POST', { email: 'admin@nepform.local', password: 'Nepform@2026!' })).status, 401);
+  const registered = await alice('/api/auth/register', 'POST', { email: 'alice@example.test', name: 'Alice', password: 'Customer@2026!' });
+  assert.match(registered.headers.get('set-cookie'), /HttpOnly.*SameSite=Lax.*Secure/);
+  const staleUser = await store.get('user', registered.data.user.id);
+  const newHash = hashPassword('NewCustomerPassword@2026');
+  await store.transaction(() => store.put('user', { ...staleUser, passwordHash: newHash }));
+  await customerRoute({ store, user:staleUser, path:'/api/account', method:'PATCH', body:{name:'Alice đổi tên'} });
+  assert.equal((await store.get('user', staleUser.id)).passwordHash, newHash);
+  await bob('/api/auth/register', 'POST', { email: 'bob@example.test', name: 'Bob', password: 'Customer@2026!' });
+  await admin('/api/auth/login', 'POST', { email: 'owner@example.test', password: 'PrivatePassword@2026' });
+  assert.equal((await alice('/api/admin')).status, 403);
+  assert.equal((await alice('/api/auth/request-reset', 'POST', { email: 'alice@example.test' })).status, 503);
+  assert.equal((await alice('/api/cart', 'POST', cart(1), { Origin: 'https://evil.example' })).status, 403);
+  assert.equal((await alice('/api/cart', 'POST', cart(1), { 'Sec-Fetch-Site': 'cross-site' })).status, 403);
+  assert.equal((await alice('/api/cart', 'POST', cart(2), { Origin: 'https://shop.example.test' })).status, 200);
+  await bob('/api/cart', 'POST', cart(2));
+  const aQuote = await expectedQuote(alice), bQuote = await expectedQuote(bob);
+  const body = { address, paymentMethod: 'cod', idempotencyKey: 'pg-order-alice', expectedQuote: aQuote };
+  const placed = await alice('/api/orders', 'POST', body); assert.equal(placed.status, 200);
+  assert.equal((await alice('/api/orders', 'POST', body)).data.order.id, placed.data.order.id);
+  assert.equal((await bob('/api/orders', 'POST', { address, paymentMethod: 'cod', idempotencyKey: 'pg-order-bob', expectedQuote: bQuote })).status, 409);
+  assert.equal((await alice('/api/bootstrap')).data.products.find(p => p.id === 'shirt').stock, 1);
+  const layer = { id:'text',kind:'text',x:40,y:50,width:220,height:60,rotation:0,opacity:1,fill:'#20201e',text:'Nếp PostgreSQL',fontFamily:'Be Vietnam Pro',fontWeight:600 };
+  const project = { version:1,name:'Áo SQL',productId:'blank',color:'Trắng',size:'M',faces:{front:{area:'medium',layers:[layer]},back:{area:'small',layers:[]}} };
+  const saved = await alice('/api/custom/designs', 'POST', { project }); assert.equal(saved.status, 200);
+  assert.equal((await alice('/api/custom/designs')).data.designs[0].project.name, project.name);
+  assert.equal((await bob(`/api/custom/designs/${saved.data.design.id}`)).status, 404);
+  const artwork = await alice(`/api/custom/designs/${saved.data.design.id}/artwork/front`);
+  assert.match(artwork.data, /Nếp PostgreSQL/);
+  await alice('/api/support/messages', 'POST', { text: 'Tư vấn SQL', requestId: 'postgres-message-001' });
+  assert.equal((await admin('/api/admin/support')).data.threads[0].adminUnread, 1);
+  assert.equal((await bob('/api/support')).data.thread, null);
+  await admin(`/api/admin/orders/${placed.data.order.id}`, 'PATCH', { status: 'confirmed', paymentStatus: 'paid', expectedVersion: 1 });
+  assert.equal((await admin('/api/admin')).data.stats.revenue, placed.data.order.total);
+  assert.equal((await admin(`/api/admin/orders/${placed.data.order.id}`, 'PATCH', { status: 'packing', expectedVersion: 1 })).status, 409);
+  await assert.rejects(store.transaction(async () => { await store.put('meta', { id:'must-rollback' }); throw new Error('rollback'); }), /rollback/);
+  assert.equal(await store.get('meta', 'must-rollback'), null);
+  const backupFile = await backupPostgres(pool, join(directory, 'backups'));
+  const backup = JSON.parse(await readFile(backupFile, 'utf8'));
+  const other = await embeddedPostgres();
+  try {
+    await restorePostgres(other, backup);
+    const restored = await snapshotPostgres(other);
+    assert.deepEqual(restored.records, backup.records);
+    assert.deepEqual(restored.identities, backup.identities);
+    assert.deepEqual(restored.idempotency, backup.idempotency);
+    await assert.rejects(restorePostgres(other, backup), /empty target/);
+  } finally { await other.end(); }
+  await stop();
+  const reopened = await embeddedPostgres(join(directory, 'database'));
+  server = await startServer({ pool: reopened, port:0, host:'127.0.0.1', production:true, appOrigin:'https://shop.example.test', staticRoot });
+  assert.equal((await alice('/api/support/messages')).data.messages.length, 1);
+  assert.equal((await alice(`/api/orders/${placed.data.order.id}`)).data.order.paymentStatus, 'paid');
+  assert.equal((await guest('/api/health')).data.ok, true);
+  for (let i = 0; i < 10; i++) assert.equal((await guest('/api/auth/login', 'POST', { email:'rate-test@example.test', password:'WrongPassword@2026' })).status, 401);
+  const limited = await guest('/api/auth/login', 'POST', { email:'rate-test@example.test', password:'WrongPassword@2026' });
+  assert.equal(limited.status, 429); assert.ok(Number(limited.headers.get('retry-after')) > 0);
+  assert.equal((await readFile(join(staticRoot, 'index.html'), 'utf8')).includes('fixture'), true);
+});
+
+test('hosted config refuses missing DB/origin and invalid origins', async () => {
+  assert.throws(() => runtimeConfig({ production: true }, {}), /APP_ORIGIN/);
+  assert.throws(() => runtimeConfig({ production: true, appOrigin:'http://shop.example.test' }, {}), /HTTPS/);
+  assert.throws(() => runtimeConfig({ production: true, appOrigin:'https://shop.example.test/path' }, {}), /origin/);
+  await assert.rejects(startServer({ production:true, appOrigin:'https://shop.example.test', dbPath:':memory:', port:0 }), /DATABASE_URL/);
+});

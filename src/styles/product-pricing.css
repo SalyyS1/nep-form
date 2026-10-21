@@ -1,0 +1,21 @@
+.sale-price {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 3px;
+}
+.sale-price-active > span:first-child { color: var(--olive); }
+.sale-price del { color: var(--muted); font-size: .8em; font-weight: 400; white-space: nowrap; }
+.sale-price-badge {
+  align-self: center;
+  background: var(--olive);
+  color: var(--surface);
+  padding: 3px 6px;
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.product-badge.product-sale-badge { background: var(--olive); color: var(--surface); }
+.studio-price .sale-price { justify-content: flex-end; }

@@ -1,0 +1,1573 @@
+[
+  {
+    "id": "nf-001",
+    "slug": "ao-thun-kem-co-tron",
+    "name": "Áo thun kem cổ tròn",
+    "category": "ao-thun",
+    "categoryLabel": "Áo thun",
+    "price": 199000,
+    "description": "Áo thun cổ tròn, bề mặt trơn và sắc kem dễ phối. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/ao-thun-kem-co-tron.webp"
+    ],
+    "colors": [
+      {
+        "name": "Kem",
+        "hex": "#eee9db"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-001-s-01",
+        "size": "S",
+        "color": "Kem",
+        "stock": 9
+      },
+      {
+        "id": "nf-001-m-01",
+        "size": "M",
+        "color": "Kem",
+        "stock": 15
+      },
+      {
+        "id": "nf-001-l-01",
+        "size": "L",
+        "color": "Kem",
+        "stock": 13
+      },
+      {
+        "id": "nf-001-xl-01",
+        "size": "XL",
+        "color": "Kem",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-002",
+    "slug": "ao-thun-den-basic",
+    "name": "Áo thun đen basic",
+    "category": "ao-thun",
+    "categoryLabel": "Áo thun",
+    "price": 219000,
+    "description": "Áo thun đen tay ngắn, đường nét gọn cho tủ đồ mỗi ngày. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/ao-thun-den-basic.webp"
+    ],
+    "colors": [
+      {
+        "name": "Đen",
+        "hex": "#20201e"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 48,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-002-s-01",
+        "size": "S",
+        "color": "Đen",
+        "stock": 10
+      },
+      {
+        "id": "nf-002-m-01",
+        "size": "M",
+        "color": "Đen",
+        "stock": 16
+      },
+      {
+        "id": "nf-002-l-01",
+        "size": "L",
+        "color": "Đen",
+        "stock": 14
+      },
+      {
+        "id": "nf-002-xl-01",
+        "size": "XL",
+        "color": "Đen",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-003",
+    "slug": "so-mi-kem-tay-ngan",
+    "name": "Sơ mi kem tay ngắn",
+    "category": "so-mi",
+    "categoryLabel": "Sơ mi",
+    "price": 349000,
+    "description": "Sơ mi cổ mở, tay ngắn và sắc kem nhẹ. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Thoải mái",
+    "images": [
+      "/images/so-mi-kem-tay-ngan.webp"
+    ],
+    "colors": [
+      {
+        "name": "Kem",
+        "hex": "#dfded2"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-003-s-01",
+        "size": "S",
+        "color": "Kem",
+        "stock": 11
+      },
+      {
+        "id": "nf-003-m-01",
+        "size": "M",
+        "color": "Kem",
+        "stock": 14
+      },
+      {
+        "id": "nf-003-l-01",
+        "size": "L",
+        "color": "Kem",
+        "stock": 12
+      },
+      {
+        "id": "nf-003-xl-01",
+        "size": "XL",
+        "color": "Kem",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-004",
+    "slug": "hoodie-be-vai-roi",
+    "name": "Hoodie be vai rơi",
+    "category": "hoodie",
+    "categoryLabel": "Hoodie",
+    "price": 479000,
+    "description": "Hoodie sắc be với vai rơi và mũ rộng. Ảnh chụp mặt sau. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Nỉ cotton (thông số demo)",
+    "fit": "Oversize",
+    "images": [
+      "/images/hoodie-be-vai-roi.webp"
+    ],
+    "colors": [
+      {
+        "name": "Be",
+        "hex": "#c5b6a1"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 42,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-004-s-01",
+        "size": "S",
+        "color": "Be",
+        "stock": 8
+      },
+      {
+        "id": "nf-004-m-01",
+        "size": "M",
+        "color": "Be",
+        "stock": 15
+      },
+      {
+        "id": "nf-004-l-01",
+        "size": "L",
+        "color": "Be",
+        "stock": 13
+      },
+      {
+        "id": "nf-004-xl-01",
+        "size": "XL",
+        "color": "Be",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "nf-005",
+    "slug": "ao-khoac-denim-cham",
+    "name": "Áo khoác denim chàm",
+    "category": "ao-khoac",
+    "categoryLabel": "Áo khoác",
+    "price": 599000,
+    "description": "Áo khoác denim cổ bẻ, hàng nút trước và túi ngực. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Denim (thông số demo)",
+    "fit": "Dáng thẳng",
+    "images": [
+      "/images/ao-khoac-denim-cham.webp"
+    ],
+    "colors": [
+      {
+        "name": "Chàm",
+        "hex": "#344a5a"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-005-s-01",
+        "size": "S",
+        "color": "Chàm",
+        "stock": 9
+      },
+      {
+        "id": "nf-005-m-01",
+        "size": "M",
+        "color": "Chàm",
+        "stock": 16
+      },
+      {
+        "id": "nf-005-l-01",
+        "size": "L",
+        "color": "Chàm",
+        "stock": 14
+      },
+      {
+        "id": "nf-005-xl-01",
+        "size": "XL",
+        "color": "Chàm",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-006",
+    "slug": "quan-dai-olive-ong-rong",
+    "name": "Quần dài olive ống rộng",
+    "category": "quan-dai",
+    "categoryLabel": "Quần dài",
+    "price": 429000,
+    "description": "Quần dài olive với ống rộng và dáng rủ tự nhiên. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Ống rộng",
+    "images": [
+      "/images/quan-dai-olive-ong-rong.webp"
+    ],
+    "colors": [
+      {
+        "name": "Olive",
+        "hex": "#687153"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-006-s-01",
+        "size": "S",
+        "color": "Olive",
+        "stock": 10
+      },
+      {
+        "id": "nf-006-m-01",
+        "size": "M",
+        "color": "Olive",
+        "stock": 14
+      },
+      {
+        "id": "nf-006-l-01",
+        "size": "L",
+        "color": "Olive",
+        "stock": 12
+      },
+      {
+        "id": "nf-006-xl-01",
+        "size": "XL",
+        "color": "Olive",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-007",
+    "slug": "quan-short-be-day-rut",
+    "name": "Quần short be dây rút",
+    "category": "quan-short",
+    "categoryLabel": "Quần short",
+    "price": 279000,
+    "description": "Quần short màu be nhạt, túi bên và dây rút tương phản. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton pha (thông số demo)",
+    "fit": "Thoải mái",
+    "images": [
+      "/images/quan-short-be-day-rut.webp"
+    ],
+    "colors": [
+      {
+        "name": "Be",
+        "hex": "#d4c7be"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 48,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-007-s-01",
+        "size": "S",
+        "color": "Be",
+        "stock": 11
+      },
+      {
+        "id": "nf-007-m-01",
+        "size": "M",
+        "color": "Be",
+        "stock": 15
+      },
+      {
+        "id": "nf-007-l-01",
+        "size": "L",
+        "color": "Be",
+        "stock": 13
+      },
+      {
+        "id": "nf-007-xl-01",
+        "size": "XL",
+        "color": "Be",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-008",
+    "slug": "ao-khoac-den-khoa-keo",
+    "name": "Áo khoác đen khóa kéo",
+    "category": "ao-khoac",
+    "categoryLabel": "Áo khoác",
+    "price": 549000,
+    "description": "Áo khoác đen có mũ, khóa kéo trước và chi tiết túi ngực. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải tổng hợp (thông số demo)",
+    "fit": "Dáng thẳng",
+    "images": [
+      "/images/ao-khoac-den-khoa-keo.webp"
+    ],
+    "colors": [
+      {
+        "name": "Đen",
+        "hex": "#27292a"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": true,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-008-s-01",
+        "size": "S",
+        "color": "Đen",
+        "stock": 8
+      },
+      {
+        "id": "nf-008-m-01",
+        "size": "M",
+        "color": "Đen",
+        "stock": 16
+      },
+      {
+        "id": "nf-008-l-01",
+        "size": "L",
+        "color": "Đen",
+        "stock": 14
+      },
+      {
+        "id": "nf-008-xl-01",
+        "size": "XL",
+        "color": "Đen",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "nf-009",
+    "slug": "ao-thun-trang-boxy",
+    "name": "Áo thun trắng boxy",
+    "category": "ao-thun",
+    "categoryLabel": "Áo thun",
+    "price": 229000,
+    "description": "Áo thun trắng tay ngắn với thân rộng và chiều dài gọn. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton (thông số demo)",
+    "fit": "Boxy",
+    "images": [
+      "/images/ao-thun-trang-boxy.webp"
+    ],
+    "colors": [
+      {
+        "name": "Trắng",
+        "hex": "#f4f3ef"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 42,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-009-s-01",
+        "size": "S",
+        "color": "Trắng",
+        "stock": 9
+      },
+      {
+        "id": "nf-009-m-01",
+        "size": "M",
+        "color": "Trắng",
+        "stock": 14
+      },
+      {
+        "id": "nf-009-l-01",
+        "size": "L",
+        "color": "Trắng",
+        "stock": 12
+      },
+      {
+        "id": "nf-009-xl-01",
+        "size": "XL",
+        "color": "Trắng",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-010",
+    "slug": "ao-thun-cat-in-chu",
+    "name": "Áo thun cát in chữ",
+    "category": "ao-thun",
+    "categoryLabel": "Áo thun",
+    "price": 249000,
+    "description": "Áo thun cổ tròn màu cát, điểm nhấn chữ nhỏ trước ngực. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton (thông số demo)",
+    "fit": "Vừa người",
+    "images": [
+      "/images/ao-thun-cat-in-chu.webp"
+    ],
+    "colors": [
+      {
+        "name": "Cát",
+        "hex": "#c9c0af"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-010-s-01",
+        "size": "S",
+        "color": "Cát",
+        "stock": 10
+      },
+      {
+        "id": "nf-010-m-01",
+        "size": "M",
+        "color": "Cát",
+        "stock": 15
+      },
+      {
+        "id": "nf-010-l-01",
+        "size": "L",
+        "color": "Cát",
+        "stock": 13
+      },
+      {
+        "id": "nf-010-xl-01",
+        "size": "XL",
+        "color": "Cát",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-011",
+    "slug": "so-mi-trang-phom-rong",
+    "name": "Sơ mi trắng phom rộng",
+    "category": "so-mi",
+    "categoryLabel": "Sơ mi",
+    "price": 379000,
+    "description": "Sơ mi trắng tay dài, phom rộng để mặc riêng hoặc khoác ngoài. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Oversize",
+    "images": [
+      "/images/so-mi-trang-phom-rong.webp"
+    ],
+    "colors": [
+      {
+        "name": "Trắng",
+        "hex": "#eeece6"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 50,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-011-s-01",
+        "size": "S",
+        "color": "Trắng",
+        "stock": 11
+      },
+      {
+        "id": "nf-011-m-01",
+        "size": "M",
+        "color": "Trắng",
+        "stock": 16
+      },
+      {
+        "id": "nf-011-l-01",
+        "size": "L",
+        "color": "Trắng",
+        "stock": 14
+      },
+      {
+        "id": "nf-011-xl-01",
+        "size": "XL",
+        "color": "Trắng",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-012",
+    "slug": "so-mi-hoa-tiet-dat",
+    "name": "Sơ mi họa tiết đất",
+    "category": "so-mi",
+    "categoryLabel": "Sơ mi",
+    "price": 399000,
+    "description": "Sơ mi tay ngắn có họa tiết lặp lại trên nền màu đất. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/so-mi-hoa-tiet-dat.webp"
+    ],
+    "colors": [
+      {
+        "name": "Nâu họa tiết",
+        "hex": "#a68757"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 40,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-012-s-01",
+        "size": "S",
+        "color": "Nâu họa tiết",
+        "stock": 8
+      },
+      {
+        "id": "nf-012-m-01",
+        "size": "M",
+        "color": "Nâu họa tiết",
+        "stock": 14
+      },
+      {
+        "id": "nf-012-l-01",
+        "size": "L",
+        "color": "Nâu họa tiết",
+        "stock": 12
+      },
+      {
+        "id": "nf-012-xl-01",
+        "size": "XL",
+        "color": "Nâu họa tiết",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "nf-013",
+    "slug": "so-mi-trang-co-tru",
+    "name": "Sơ mi trắng cổ trụ",
+    "category": "so-mi",
+    "categoryLabel": "Sơ mi",
+    "price": 329000,
+    "description": "Sơ mi trắng cổ trụ thấp, đường cài nút tối giản. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton pha (thông số demo)",
+    "fit": "Vừa người",
+    "images": [
+      "/images/so-mi-trang-co-tru.webp"
+    ],
+    "colors": [
+      {
+        "name": "Trắng",
+        "hex": "#edf0ef"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-013-s-01",
+        "size": "S",
+        "color": "Trắng",
+        "stock": 9
+      },
+      {
+        "id": "nf-013-m-01",
+        "size": "M",
+        "color": "Trắng",
+        "stock": 15
+      },
+      {
+        "id": "nf-013-l-01",
+        "size": "L",
+        "color": "Trắng",
+        "stock": 13
+      },
+      {
+        "id": "nf-013-xl-01",
+        "size": "XL",
+        "color": "Trắng",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-014",
+    "slug": "ao-khoac-phao-kem",
+    "name": "Áo khoác phao kem",
+    "category": "ao-khoac",
+    "categoryLabel": "Áo khoác",
+    "price": 699000,
+    "description": "Áo khoác phao sắc kem, cổ cao và phom đầy đặn. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải chần bông (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/ao-khoac-phao-kem.webp"
+    ],
+    "colors": [
+      {
+        "name": "Kem",
+        "hex": "#d2c4b4"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 48,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-014-s-01",
+        "size": "S",
+        "color": "Kem",
+        "stock": 10
+      },
+      {
+        "id": "nf-014-m-01",
+        "size": "M",
+        "color": "Kem",
+        "stock": 16
+      },
+      {
+        "id": "nf-014-l-01",
+        "size": "L",
+        "color": "Kem",
+        "stock": 14
+      },
+      {
+        "id": "nf-014-xl-01",
+        "size": "XL",
+        "color": "Kem",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-015",
+    "slug": "ao-khoac-blazer-nau",
+    "name": "Áo khoác blazer nâu",
+    "category": "ao-khoac",
+    "categoryLabel": "Áo khoác",
+    "price": 649000,
+    "description": "Blazer nâu cổ ve, dáng suông để phối cùng áo thun. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Thoải mái",
+    "images": [
+      "/images/ao-khoac-blazer-nau.webp"
+    ],
+    "colors": [
+      {
+        "name": "Nâu",
+        "hex": "#775240"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-015-s-01",
+        "size": "S",
+        "color": "Nâu",
+        "stock": 11
+      },
+      {
+        "id": "nf-015-m-01",
+        "size": "M",
+        "color": "Nâu",
+        "stock": 14
+      },
+      {
+        "id": "nf-015-l-01",
+        "size": "L",
+        "color": "Nâu",
+        "stock": 12
+      },
+      {
+        "id": "nf-015-xl-01",
+        "size": "XL",
+        "color": "Nâu",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-016",
+    "slug": "quan-dai-den-ong-suong",
+    "name": "Quần dài đen ống suông",
+    "category": "quan-dai",
+    "categoryLabel": "Quần dài",
+    "price": 399000,
+    "description": "Quần dài đen với ống suông rộng và dáng rủ. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Ống suông",
+    "images": [
+      "/images/quan-dai-den-ong-suong.webp"
+    ],
+    "colors": [
+      {
+        "name": "Đen",
+        "hex": "#252625"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 42,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-016-s-01",
+        "size": "S",
+        "color": "Đen",
+        "stock": 8
+      },
+      {
+        "id": "nf-016-m-01",
+        "size": "M",
+        "color": "Đen",
+        "stock": 15
+      },
+      {
+        "id": "nf-016-l-01",
+        "size": "L",
+        "color": "Đen",
+        "stock": 13
+      },
+      {
+        "id": "nf-016-xl-01",
+        "size": "XL",
+        "color": "Đen",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "nf-017",
+    "slug": "quan-dai-be-lung-thun",
+    "name": "Quần dài be lưng thun",
+    "category": "quan-dai",
+    "categoryLabel": "Quần dài",
+    "price": 359000,
+    "description": "Quần dài be lưng thun, dây rút và chiều dài gọn trên cổ chân. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton pha (thông số demo)",
+    "fit": "Ống đứng",
+    "images": [
+      "/images/quan-dai-be-lung-thun.webp"
+    ],
+    "colors": [
+      {
+        "name": "Be",
+        "hex": "#d6cfbe"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-017-s-01",
+        "size": "S",
+        "color": "Be",
+        "stock": 9
+      },
+      {
+        "id": "nf-017-m-01",
+        "size": "M",
+        "color": "Be",
+        "stock": 16
+      },
+      {
+        "id": "nf-017-l-01",
+        "size": "L",
+        "color": "Be",
+        "stock": 14
+      },
+      {
+        "id": "nf-017-xl-01",
+        "size": "XL",
+        "color": "Be",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-018",
+    "slug": "quan-jeans-xanh-nhat",
+    "name": "Quần jeans xanh nhạt",
+    "category": "quan-dai",
+    "categoryLabel": "Quần dài",
+    "price": 459000,
+    "description": "Quần jeans xanh nhạt, phom thẳng và bề mặt màu wash sáng. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Denim (thông số demo)",
+    "fit": "Ống đứng",
+    "images": [
+      "/images/quan-jeans-xanh-nhat.webp"
+    ],
+    "colors": [
+      {
+        "name": "Xanh nhạt",
+        "hex": "#b5c8d4"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-018-s-01",
+        "size": "S",
+        "color": "Xanh nhạt",
+        "stock": 10
+      },
+      {
+        "id": "nf-018-m-01",
+        "size": "M",
+        "color": "Xanh nhạt",
+        "stock": 14
+      },
+      {
+        "id": "nf-018-l-01",
+        "size": "L",
+        "color": "Xanh nhạt",
+        "stock": 12
+      },
+      {
+        "id": "nf-018-xl-01",
+        "size": "XL",
+        "color": "Xanh nhạt",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-019",
+    "slug": "quan-short-denim-xanh",
+    "name": "Quần short denim xanh",
+    "category": "quan-short",
+    "categoryLabel": "Quần short",
+    "price": 329000,
+    "description": "Quần short denim xanh, túi trước và chiều dài gọn. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Denim (thông số demo)",
+    "fit": "Vừa người",
+    "images": [
+      "/images/quan-short-denim-xanh.webp"
+    ],
+    "colors": [
+      {
+        "name": "Xanh denim",
+        "hex": "#3b6884"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 48,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-019-s-01",
+        "size": "S",
+        "color": "Xanh denim",
+        "stock": 11
+      },
+      {
+        "id": "nf-019-m-01",
+        "size": "M",
+        "color": "Xanh denim",
+        "stock": 15
+      },
+      {
+        "id": "nf-019-l-01",
+        "size": "L",
+        "color": "Xanh denim",
+        "stock": 13
+      },
+      {
+        "id": "nf-019-xl-01",
+        "size": "XL",
+        "color": "Xanh denim",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-020",
+    "slug": "quan-short-trang-ngoc",
+    "name": "Quần short trắng ngọc",
+    "category": "quan-short",
+    "categoryLabel": "Quần short",
+    "price": 299000,
+    "description": "Quần short trắng ngọc, ống rộng nhẹ cho những ngày nắng. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Vải dệt (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/quan-short-trang-ngoc.webp"
+    ],
+    "colors": [
+      {
+        "name": "Trắng ngọc",
+        "hex": "#e5e9e3"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 44,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-020-s-01",
+        "size": "S",
+        "color": "Trắng ngọc",
+        "stock": 8
+      },
+      {
+        "id": "nf-020-m-01",
+        "size": "M",
+        "color": "Trắng ngọc",
+        "stock": 16
+      },
+      {
+        "id": "nf-020-l-01",
+        "size": "L",
+        "color": "Trắng ngọc",
+        "stock": 14
+      },
+      {
+        "id": "nf-020-xl-01",
+        "size": "XL",
+        "color": "Trắng ngọc",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "nf-021",
+    "slug": "quan-short-xam-hang-ngay",
+    "name": "Quần short xám hằng ngày",
+    "category": "quan-short",
+    "categoryLabel": "Quần short",
+    "price": 259000,
+    "description": "Quần short xám dài gần gối, phối thoải mái cùng áo thun. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Cotton pha (thông số demo)",
+    "fit": "Thoải mái",
+    "images": [
+      "/images/quan-short-xam-hang-ngay.webp"
+    ],
+    "colors": [
+      {
+        "name": "Xám",
+        "hex": "#92908b"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 42,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-021-s-01",
+        "size": "S",
+        "color": "Xám",
+        "stock": 9
+      },
+      {
+        "id": "nf-021-m-01",
+        "size": "M",
+        "color": "Xám",
+        "stock": 14
+      },
+      {
+        "id": "nf-021-l-01",
+        "size": "L",
+        "color": "Xám",
+        "stock": 12
+      },
+      {
+        "id": "nf-021-xl-01",
+        "size": "XL",
+        "color": "Xám",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "nf-022",
+    "slug": "hoodie-xam-suong",
+    "name": "Hoodie xám sương",
+    "category": "hoodie",
+    "categoryLabel": "Hoodie",
+    "price": 459000,
+    "description": "Hoodie xám sương, cổ mũ và đường vai tự nhiên. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Nỉ cotton (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/hoodie-xam-suong.webp"
+    ],
+    "colors": [
+      {
+        "name": "Xám sương",
+        "hex": "#afb5b2"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 46,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-022-s-01",
+        "size": "S",
+        "color": "Xám sương",
+        "stock": 10
+      },
+      {
+        "id": "nf-022-m-01",
+        "size": "M",
+        "color": "Xám sương",
+        "stock": 15
+      },
+      {
+        "id": "nf-022-l-01",
+        "size": "L",
+        "color": "Xám sương",
+        "stock": 13
+      },
+      {
+        "id": "nf-022-xl-01",
+        "size": "XL",
+        "color": "Xám sương",
+        "stock": 8
+      }
+    ]
+  },
+  {
+    "id": "nf-023",
+    "slug": "hoodie-den-basic",
+    "name": "Hoodie đen basic",
+    "category": "hoodie",
+    "categoryLabel": "Hoodie",
+    "price": 489000,
+    "description": "Hoodie đen trơn có túi trước, dễ kết hợp trong nhiều lớp mặc. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Nỉ cotton (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/hoodie-den-basic.webp"
+    ],
+    "colors": [
+      {
+        "name": "Đen",
+        "hex": "#242425"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 50,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-023-s-01",
+        "size": "S",
+        "color": "Đen",
+        "stock": 11
+      },
+      {
+        "id": "nf-023-m-01",
+        "size": "M",
+        "color": "Đen",
+        "stock": 16
+      },
+      {
+        "id": "nf-023-l-01",
+        "size": "L",
+        "color": "Đen",
+        "stock": 14
+      },
+      {
+        "id": "nf-023-xl-01",
+        "size": "XL",
+        "color": "Đen",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "nf-024",
+    "slug": "hoodie-trang-nga",
+    "name": "Hoodie trắng ngà",
+    "category": "hoodie",
+    "categoryLabel": "Hoodie",
+    "price": 499000,
+    "description": "Hoodie trắng ngà có dây rút và túi trước lớn. Sản phẩm demo để trải nghiệm cửa hàng; ảnh minh họa từ Pexels.",
+    "material": "Nỉ cotton (thông số demo)",
+    "fit": "Rộng vừa",
+    "images": [
+      "/images/hoodie-trang-nga.webp"
+    ],
+    "colors": [
+      {
+        "name": "Trắng ngà",
+        "hex": "#e5e3d9"
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "stock": 40,
+    "featured": false,
+    "isActive": true,
+    "isDemo": true,
+    "variants": [
+      {
+        "id": "nf-024-s-01",
+        "size": "S",
+        "color": "Trắng ngà",
+        "stock": 8
+      },
+      {
+        "id": "nf-024-m-01",
+        "size": "M",
+        "color": "Trắng ngà",
+        "stock": 14
+      },
+      {
+        "id": "nf-024-l-01",
+        "size": "L",
+        "color": "Trắng ngà",
+        "stock": 12
+      },
+      {
+        "id": "nf-024-xl-01",
+        "size": "XL",
+        "color": "Trắng ngà",
+        "stock": 6
+      }
+    ]
+  }
+,
+{
+  "id": "custom-classic",
+  "slug": "custom-classic",
+  "name": "Áo custom Classic",
+  "category": "ao-custom",
+  "categoryLabel": "Áo thiết kế",
+  "price": 149000,
+  "description": "Áo nền demo dành cho Studio. Giá và thông số có thể cấu hình tại trang quản trị.",
+  "material": "Cotton (thông số demo)",
+  "fit": "Regular",
+  "images": [
+    "/images/custom-classic.svg"
+  ],
+  "colors": [
+    {
+      "name": "Kem",
+      "hex": "#eee9db"
+    },
+    {
+      "name": "Trắng",
+      "hex": "#ffffff"
+    },
+    {
+      "name": "Đen",
+      "hex": "#20201e"
+    }
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "stock": 240,
+  "featured": false,
+  "isActive": true,
+  "isDemo": true,
+  "isCustomBase": true,
+  "variants": [
+    {
+      "id": "custom-classic-s-0",
+      "size": "S",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-s-1",
+      "size": "S",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-s-2",
+      "size": "S",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-m-0",
+      "size": "M",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-m-1",
+      "size": "M",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-m-2",
+      "size": "M",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-l-0",
+      "size": "L",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-l-1",
+      "size": "L",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-l-2",
+      "size": "L",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-xl-0",
+      "size": "XL",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-xl-1",
+      "size": "XL",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-classic-xl-2",
+      "size": "XL",
+      "color": "Đen",
+      "stock": 20
+    }
+  ]
+},
+{
+  "id": "custom-oversize",
+  "slug": "custom-oversize",
+  "name": "Áo custom Oversize",
+  "category": "ao-custom",
+  "categoryLabel": "Áo thiết kế",
+  "price": 179000,
+  "description": "Áo nền demo dành cho Studio. Giá và thông số có thể cấu hình tại trang quản trị.",
+  "material": "Cotton (thông số demo)",
+  "fit": "Oversize",
+  "images": [
+    "/images/custom-oversize.svg"
+  ],
+  "colors": [
+    {
+      "name": "Kem",
+      "hex": "#eee9db"
+    },
+    {
+      "name": "Trắng",
+      "hex": "#ffffff"
+    },
+    {
+      "name": "Đen",
+      "hex": "#20201e"
+    }
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL"
+  ],
+  "stock": 240,
+  "featured": false,
+  "isActive": true,
+  "isDemo": true,
+  "isCustomBase": true,
+  "variants": [
+    {
+      "id": "custom-oversize-s-0",
+      "size": "S",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-s-1",
+      "size": "S",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-s-2",
+      "size": "S",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-m-0",
+      "size": "M",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-m-1",
+      "size": "M",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-m-2",
+      "size": "M",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-l-0",
+      "size": "L",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-l-1",
+      "size": "L",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-l-2",
+      "size": "L",
+      "color": "Đen",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-xl-0",
+      "size": "XL",
+      "color": "Kem",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-xl-1",
+      "size": "XL",
+      "color": "Trắng",
+      "stock": 20
+    },
+    {
+      "id": "custom-oversize-xl-2",
+      "size": "XL",
+      "color": "Đen",
+      "stock": 20
+    }
+  ]
+}
+]

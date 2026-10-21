@@ -1,0 +1,160 @@
+{
+  "license": "SIL Open Font License 1.1",
+  "modifications": "Static weights, Latin/Vietnamese/punctuation subset, renamed NEP Library internal families. Original copyrights retained.",
+  "fonts": [
+    {
+      "id": "montserrat",
+      "label": "Montserrat",
+      "group": "Hiện đại",
+      "weight": 600,
+      "path": "/fonts/studio/montserrat.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf",
+      "license": "/fonts/studio/montserrat-ofl.txt",
+      "sourceSha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+      "bytes": 33072
+    },
+    {
+      "id": "oswald",
+      "label": "Oswald",
+      "group": "Nổi bật",
+      "weight": 600,
+      "path": "/fonts/studio/oswald.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/oswald/Oswald%5Bwght%5D.ttf",
+      "license": "/fonts/studio/oswald-ofl.txt",
+      "sourceSha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817",
+      "bytes": 19120
+    },
+    {
+      "id": "anton",
+      "label": "Anton",
+      "group": "Nổi bật",
+      "weight": 400,
+      "path": "/fonts/studio/anton.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf",
+      "license": "/fonts/studio/anton-ofl.txt",
+      "sourceSha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "bytes": 34040
+    },
+    {
+      "id": "bangers",
+      "label": "Bangers",
+      "group": "Nổi bật",
+      "weight": 400,
+      "path": "/fonts/studio/bangers.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bangers/Bangers-Regular.ttf",
+      "license": "/fonts/studio/bangers-ofl.txt",
+      "sourceSha256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+      "bytes": 31044
+    },
+    {
+      "id": "pacifico",
+      "label": "Pacifico",
+      "group": "Viết tay",
+      "weight": 400,
+      "path": "/fonts/studio/pacifico.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/pacifico/Pacifico-Regular.ttf",
+      "license": "/fonts/studio/pacifico-ofl.txt",
+      "sourceSha256": "5b6c0d5334a7bf77dea52b975c5a0c408878c0f7115ed5b6fb151f634b7bf701",
+      "bytes": 47904
+    },
+    {
+      "id": "lobster",
+      "label": "Lobster",
+      "group": "Viết tay",
+      "weight": 400,
+      "path": "/fonts/studio/lobster.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lobster/Lobster-Regular.ttf",
+      "license": "/fonts/studio/lobster-ofl.txt",
+      "sourceSha256": "d6568e697fd50cedc0be04d8aae4127fe95add607e7bff954ca88604be80c205",
+      "bytes": 55988
+    },
+    {
+      "id": "dancingscript",
+      "label": "Dancing Script",
+      "group": "Viết tay",
+      "weight": 500,
+      "path": "/fonts/studio/dancingscript.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/dancingscript/DancingScript%5Bwght%5D.ttf",
+      "license": "/fonts/studio/dancingscript-ofl.txt",
+      "sourceSha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
+      "bytes": 30480
+    },
+    {
+      "id": "playfairdisplay",
+      "label": "Playfair Display",
+      "group": "Cổ điển",
+      "weight": 500,
+      "path": "/fonts/studio/playfairdisplay.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf",
+      "license": "/fonts/studio/playfairdisplay-ofl.txt",
+      "sourceSha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+      "bytes": 29156
+    },
+    {
+      "id": "lora",
+      "label": "Lora",
+      "group": "Cổ điển",
+      "weight": 500,
+      "path": "/fonts/studio/lora.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf",
+      "license": "/fonts/studio/lora-ofl.txt",
+      "sourceSha256": "822a6621ccbe8d97d20ac88c1c41f5615c9c2c202eaa75f272cd452aac6475a7",
+      "bytes": 28276
+    },
+    {
+      "id": "merriweather",
+      "label": "Merriweather",
+      "group": "Cổ điển",
+      "weight": 400,
+      "path": "/fonts/studio/merriweather.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/merriweather/Merriweather%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "license": "/fonts/studio/merriweather-ofl.txt",
+      "sourceSha256": "d0ed0e359e396af7ad05e73dffd11a3a4c326ea0d0283c56bd9361cb2cc86a96",
+      "bytes": 106344
+    },
+    {
+      "id": "patrickhand",
+      "label": "Patrick Hand",
+      "group": "Viết tay",
+      "weight": 400,
+      "path": "/fonts/studio/patrickhand.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/patrickhand/PatrickHand-Regular.ttf",
+      "license": "/fonts/studio/patrickhand-ofl.txt",
+      "sourceSha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc",
+      "bytes": 39884
+    },
+    {
+      "id": "comfortaa",
+      "label": "Comfortaa",
+      "group": "Hiện đại",
+      "weight": 500,
+      "path": "/fonts/studio/comfortaa.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/comfortaa/Comfortaa%5Bwght%5D.ttf",
+      "license": "/fonts/studio/comfortaa-ofl.txt",
+      "sourceSha256": "0fc3f45dc48b614db9c39181502544b37217ecbf8bee2fb35886992bc96c5bd3",
+      "bytes": 19268
+    },
+    {
+      "id": "chakrapetch",
+      "label": "Chakra Petch",
+      "group": "Hiện đại",
+      "weight": 300,
+      "path": "/fonts/studio/chakrapetch.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/chakrapetch/ChakraPetch-Light.ttf",
+      "license": "/fonts/studio/chakrapetch-ofl.txt",
+      "sourceSha256": "13a106a367b903fb509ed11e7c921589a0d42c22540510d3ca8f6c7343bef76b",
+      "bytes": 14736
+    },
+    {
+      "id": "spacemono",
+      "label": "Space Mono",
+      "group": "Hiện đại",
+      "weight": 400,
+      "path": "/fonts/studio/spacemono.woff2",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/spacemono/SpaceMono-Regular.ttf",
+      "license": "/fonts/studio/spacemono-ofl.txt",
+      "sourceSha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18",
+      "bytes": 22872
+    }
+  ]
+}

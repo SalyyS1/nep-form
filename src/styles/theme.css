@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/be-vietnam-pro-400.woff2') format('woff2')}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/be-vietnam-pro-500.woff2') format('woff2')}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/be-vietnam-pro-600.woff2') format('woff2')}
+@font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/be-vietnam-pro-700.woff2') format('woff2')}
+:root{
+ --paper:#f7f5f0;--surface:#fff;--ink:#20201e;--muted:#6b6b63;--line:#deded5;--olive:#4f5a40;--olive-soft:#ecefe6;--cream:#eeebe3;--sand:#e4dfd4;--danger:#a33e30;--danger-soft:#faf0eb;--success:#3c6247;--overlay:#20201e70;
+ --font:'Be Vietnam Pro',sans-serif;--text-xs:.6875rem;--text-sm:.8125rem;--text-base:.875rem;--text-md:1rem;--text-lg:1.125rem;--text-xl:1.5rem;--text-2xl:2rem;--text-3xl:2.75rem;--text-display:4.5rem;
+ --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;
+ --radius:6px;--radius-sm:3px;--round:999px;--container:1280px;--duration:180ms;--shadow:0 16px 64px #20201e1a;
+}

@@ -1,0 +1,44 @@
+import { useRef, useState, type FormEvent } from 'react';
+import { ArrowLeft, ArrowRight, Banknote, Check, CreditCard, LockKeyhole, MapPin } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { api, ApiError, money, send } from '../../lib/api';
+import { useCartTotal, useStore } from '../../lib/store-context';
+import type { Order } from '../../lib/types';
+import { AddressFields, emptyAddress } from '../account/address-form';
+import { EmptyState, ErrorText } from '../../components/ui';
+import { EmailVerificationNotice } from '../account/email-verification-notice';
+import { CustomDesignDetails, designPreview } from './custom-design-details';
+import { CheckoutCoupon } from './checkout-coupon';
+import { useCheckoutQuote } from './use-checkout-quote';
+import { productPrice } from '../../../shared/product-pricing.mjs';
+
+export default function CheckoutPage() {
+  const { data, cart, refresh, notify } = useStore();
+  const fallbackSubtotal = useCartTotal();
+  const pricing = useCheckoutQuote();
+  const subtotal = pricing.quote?.subtotal ?? fallbackSubtotal;
+  const [addressId, setAddressId] = useState(data?.addresses.find((a) => a.isDefault)?.id || data?.addresses[0]?.id || 'new');
+  const [address, setAddress] = useState({ ...emptyAddress, recipient: data?.user?.name || '' });
+  const [saveAddress, setSaveAddress] = useState(true);
+  const [method, setMethod] = useState<'cod' | 'bank'>('cod');
+  const [note, setNote] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const idempotency = useRef(crypto.randomUUID());
+  const navigate = useNavigate();
+  const shipping = pricing.quote?.shipping ?? data?.settings.shippingFee ?? 0;
+  const discount = pricing.quote?.discount ?? 0;
+  const total = pricing.quote?.total ?? subtotal + shipping;
+  const verificationNeeded = !!data?.email?.verificationRequired && data.user?.role !== 'admin' && !data.user?.emailVerified;
+  async function submit(event: FormEvent) {
+    event.preventDefault(); if (!pricing.quote || pricing.loading) { setError('Bạn chờ tổng tiền được cập nhật rồi đặt hàng nhé.'); return; } if (verificationNeeded) { setError('Bạn xác minh email trước khi đặt hàng nhé.'); return; } setBusy(true); setError('');
+    try {
+      const expectedQuote = pricing.quote;
+      const result = await api<{ order: Order }>('/orders', send('POST', { ...(addressId === 'new' ? { address, saveAddress } : { addressId }), paymentMethod: method, note, idempotencyKey: idempotency.current, couponCode: pricing.couponCode, expectedQuote }));
+      await refresh(); notify('Nếp đã nhận được đơn hàng của bạn.'); navigate(`/don-hang/${result.order.id}?moi=1`);
+    } catch (e) { if (e instanceof ApiError && e.status === 409) { await refresh().catch(() => undefined); await pricing.reload().catch(() => undefined); } setError(e instanceof Error ? e.message : 'Chưa đặt được đơn hàng.'); }
+    finally { setBusy(false); }
+  }
+  if (!cart.length) return <EmptyState title="Bạn chưa chọn sản phẩm nào." text="Thêm món đồ yêu thích vào giỏ để tiếp tục nhé." />;
+  return <div className="container checkout-page"><div className="breadcrumbs"><Link to="/gio-hang">Giỏ hàng</Link><span>/</span><span>Thanh toán</span></div><div className="page-heading"><p className="eyebrow">KIỂM TRA ĐƠN HÀNG</p><h1>Thanh toán<span className="olive-period">.</span></h1></div><EmailVerificationNotice /><form onSubmit={submit} className="purchase-layout checkout-layout"><div className="checkout-form"><section className="checkout-block"><div className="checkout-block-heading"><span>01</span><h2>Thông tin giao hàng</h2><MapPin size={20} /></div>{data?.addresses.length ? <div className="checkout-addresses">{data.addresses.map((item) => <label className={`address-choice ${addressId === item.id ? 'selected' : ''}`} key={item.id}><input type="radio" name="address" checked={addressId === item.id} onChange={() => setAddressId(item.id)} /><div><strong>{item.recipient}</strong>{item.isDefault && <span className="badge">Mặc định</span>}<p>{item.phone}</p><p>{item.line1}, {item.ward}, {item.province}</p></div></label>)}<label className="radio-line new-address-choice"><input type="radio" name="address" checked={addressId === 'new'} onChange={() => setAddressId('new')} />Giao đến địa chỉ khác</label></div> : <p className="muted">Nếp cần một vài thông tin để gửi đơn hàng đến bạn.</p>}{addressId === 'new' && <><AddressFields value={address} onChange={setAddress} /><label className="checkbox-line"><input type="checkbox" checked={saveAddress} onChange={(e) => setSaveAddress(e.target.checked)} />Lưu địa chỉ cho lần mua sau</label></>}<label className="form-field checkout-note">Ghi chú cho Nếp <span className="field-optional">(không bắt buộc)</span><textarea className="input" rows={3} value={note} onChange={(e) => setNote(e.target.value)} placeholder="Điều gì Nếp cần lưu ý khi giao hàng?" maxLength={500} /></label></section><section className="checkout-block"><div className="checkout-block-heading"><span>02</span><h2>Phương thức thanh toán</h2><CreditCard size={20} /></div><label className={`payment-choice ${method === 'cod' ? 'selected' : ''}`}><input type="radio" name="payment" value="cod" checked={method === 'cod'} onChange={() => setMethod('cod')} /><Banknote size={23} /><div><strong>Thanh toán khi nhận hàng</strong><span>Trả tiền mặt khi bạn nhận được đơn hàng.</span></div>{method === 'cod' && <Check size={18} />}</label><label className={`payment-choice ${method === 'bank' ? 'selected' : ''} ${!data?.settings.bankEnabled ? 'disabled' : ''}`}><input type="radio" name="payment" value="bank" disabled={!data?.settings.bankEnabled} checked={method === 'bank'} onChange={() => setMethod('bank')} /><CreditCard size={23} /><div><strong>Chuyển khoản ngân hàng</strong><span>{data?.settings.bankEnabled ? 'Xem hướng dẫn chuyển khoản sau khi đặt hàng.' : 'Shop đang tạm dừng phương thức này.'}</span></div>{method === 'bank' && <Check size={18} />}</label>{method === 'bank' && <div className="inline-notice">{data?.mode === 'local' ? 'Bản thử chưa kết nối ngân hàng. Không chuyển tiền thật.' : 'Liên hệ Nếp để nhận thông tin chuyển khoản. Đơn được xác nhận thanh toán sau khi shop kiểm tra tiền nhận.'}</div>}</section><Link className="text-link" to="/gio-hang"><ArrowLeft size={16} />Quay lại giỏ hàng</Link></div><aside className="order-summary checkout-summary"><h2>Đơn hàng của bạn <span>({cart.reduce((sum, i) => sum + i.quantity, 0)})</span></h2><div className="checkout-items">{cart.map((item) => { const product = data?.products.find((p) => p.id === item.productId); return product && <div key={item.id} className="checkout-item"><div><img src={item.custom ? designPreview(item.custom.designId) : product.images[0]} alt={item.custom?.name || product.name} /><span>{item.quantity}</span></div><div><strong>{item.custom?.name || product.name}</strong><p>{item.color} / {item.size}</p>{item.custom && <CustomDesignDetails custom={item.custom} />}</div><b>{money((pricing.quote?.items.find(q => q.productId === item.productId && q.size === item.size && q.color === item.color && (q.designId || '') === (item.custom?.designId || ''))?.unitPrice ?? item.custom?.unitPrice ?? productPrice(product)) * item.quantity)}</b></div>; })}</div><CheckoutCoupon quote={pricing.quote} couponCode={pricing.couponCode} contextKey={pricing.contextKey} loading={pricing.loading} error={pricing.error} onApply={pricing.apply} onRemove={pricing.remove} /><div className="summary-row"><span>Tiền sản phẩm</span><strong>{money(subtotal)}</strong></div><div className="summary-row"><span>Phí giao hàng</span><strong>{money(shipping)}</strong></div><div className="summary-row summary-discount"><span>Giảm giá{pricing.quote?.coupon ? ` · ${pricing.quote.coupon.code}` : ''}</span><strong>{discount ? `−${money(discount)}` : money(0)}</strong></div><div className="summary-total"><span>Tổng cộng</span><strong>{money(total)}</strong></div>{pricing.loading && <p className="checkout-quote-status" role="status">Đang kiểm tra giá và ưu đãi hiện tại…</p>}{!pricing.quote && !pricing.loading && <button type="button" className="text-link" onClick={() => void pricing.reload().catch(() => undefined)}>Tính lại tổng tiền</button>}<ErrorText>{error}</ErrorText><button className="button full-width" disabled={busy || pricing.loading || !pricing.quote || verificationNeeded || !data?.settings.checkoutEnabled}>{busy ? 'Đang gửi đơn hàng...' : verificationNeeded ? 'Cần xác minh email' : data?.settings.checkoutEnabled ? 'Xác nhận đặt hàng' : 'Shop tạm dừng nhận đơn'}<ArrowRight size={17} /></button><p className="checkout-terms">Bằng việc đặt hàng, bạn đồng ý với <Link to="/thong-tin/giao-hang">điều kiện mua hàng</Link> của Nếp.</p><div className="secure-note"><LockKeyhole size={15} />Thông tin giao hàng được lưu cùng đơn của bạn.</div></aside></form></div>;
+}

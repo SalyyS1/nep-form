@@ -1,0 +1,19 @@
+.announcement{height:44px}.announcement>a{min-height:44px}
+.brand{min-height:44px;align-items:center}.brand>i{align-self:auto;margin-top:16px;margin-bottom:0}
+.hero-visual{min-width:0;width:100%}
+.hero-image-caption{background:var(--paper);color:var(--ink);text-shadow:none;padding:var(--space-3) var(--space-4);font-size:var(--text-xs)}
+.story-image>span{background:var(--paper);color:var(--ink);text-shadow:none;padding:var(--space-2) var(--space-3)}
+.auth-visual>div{background:var(--paper);color:var(--ink);text-shadow:none;padding:var(--space-6)}
+.product-name{min-height:44px}
+.footer-grid>div:not(:first-child){gap:var(--space-1)}.footer-grid>div:not(:first-child)>a{min-height:44px;display:flex;align-items:center}
+.pending-cart-panel{border:1px solid var(--line);background:var(--surface);padding:var(--space-6);margin-bottom:var(--space-8)}
+.pending-cart-heading{display:flex;gap:var(--space-4);margin-bottom:var(--space-5);color:var(--olive)}
+.pending-cart-heading h2{font-size:var(--text-lg);font-weight:500;letter-spacing:-.03em}.pending-cart-heading p{font-size:var(--text-xs);color:var(--muted);margin-top:var(--space-2)}
+.pending-cart-item{display:flex;gap:var(--space-4);align-items:center;padding-block:var(--space-4);border-top:1px solid var(--line)}.pending-cart-item>img{width:50px;aspect-ratio:3/4;object-fit:cover}.pending-cart-item>div:not(.quantity){flex:1}.pending-cart-item strong{font-size:var(--text-sm);font-weight:500}.pending-cart-item p{font-size:var(--text-xs);color:var(--muted);margin-top:var(--space-2)}.pending-cart-panel>.button-secondary{margin-top:var(--space-5)}
+@media(max-width:767px){
+ .announcement{height:44px}.header-actions .icon-button{width:44px}
+ .hero-visual{min-height:0;aspect-ratio:4/4.4;width:100%}
+ .hero-image-caption{left:var(--space-4);right:var(--space-4);bottom:var(--space-4);font-size:10px}
+ .hero-image-caption>span:last-child{font-size:9px}
+ .pending-cart-panel{padding:var(--space-4)}.pending-cart-item{flex-wrap:wrap;gap:var(--space-3)}.pending-cart-item strong{font-size:var(--text-xs)}.pending-cart-item p{font-size:10px}.pending-cart-item>.quantity{margin-left:62px}
+}

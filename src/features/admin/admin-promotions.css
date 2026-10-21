@@ -1,0 +1,24 @@
+.promotion-overview{padding:18px 22px;margin-bottom:24px;border:1px solid var(--admin-line);border-radius:8px;background:var(--admin-soft)}
+.promotion-overview strong{font-size:12px;font-weight:600}
+.promotion-overview p{margin:5px 0 0;color:#61675b;font-size:11px;max-width:100ch}
+.promotion-table{min-width:850px}
+.promotion-table td{height:94px}
+.promotion-table td:first-child{max-width:240px;overflow-wrap:anywhere}
+.promotion-table .promotion-code{font-size:12px;letter-spacing:.5px;font-weight:650}
+.promotion-restrictions{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.promotion-restrictions span{font-size:9px;line-height:1.6;padding:2px 7px;border-radius:4px;background:var(--admin-soft);color:#526047}
+.promotion-status-active{color:#526d40}
+.promotion-status-scheduled{color:#526c80}
+.promotion-status-expired,.promotion-status-exhausted{color:#946c2d}
+.promotion-loading{padding:25px;text-align:center;color:var(--admin-muted)}
+.promotion-fields{padding:0;border:0;margin:0;min-width:0;display:grid;gap:24px}
+.promotion-note{margin:0;padding:13px 15px;border-radius:6px;background:#edf0e7;color:#526047;font-size:11px}
+.promotion-help{font-size:11px;color:#73766d;margin:12px 0}
+.promotion-form .admin-form-group{margin:0}
+.promotion-form .admin-form-grid{align-items:start}
+.promotion-condition{display:grid;gap:7px}
+.promotion-condition .admin-check{align-items:flex-start}
+.promotion-condition input[type=checkbox]{margin-top:0}
+.promotion-form input[type=datetime-local]{min-width:0;width:100%}
+@media(max-width:650px){.promotion-overview{padding:15px;margin-bottom:18px}.promotion-form .admin-form-grid{grid-template-columns:1fr}.promotion-table{min-width:0}.promotion-table td{height:auto}.promotion-table td:first-child{grid-column:1/-1;max-width:none;padding-right:40px}.promotion-table td:nth-child(2):before{content:'Mức giảm';display:block;color:var(--admin-muted);font-size:9px;margin-bottom:4px}.promotion-table td:nth-child(3){text-align:right}.promotion-table td:nth-child(4):before{content:'Lượt sử dụng';display:block;color:var(--admin-muted);font-size:9px;margin-bottom:4px}.promotion-table td:nth-child(5){text-align:right;align-self:end}.promotion-table td:last-child{position:absolute;right:9px;top:13px}}
+.promotion-visibility{display:inline-flex;margin-top:6px;padding:2px 6px;border:1px solid var(--admin-line);border-radius:4px;color:var(--admin-muted);font-size:9px}.promotion-visible{background:var(--admin-soft);color:#526047}

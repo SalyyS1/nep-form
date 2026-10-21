@@ -1,0 +1,29 @@
+.voucher-dialog{width:min(680px,calc(100% - 32px));padding:26px;overflow:hidden}
+.voucher-dialog[open]{display:flex;flex-direction:column}
+.voucher-dialog .dialog-heading{flex-shrink:0;margin-bottom:14px}
+.voucher-intro{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:12px;line-height:1.7;flex-shrink:0}
+.voucher-intro svg{margin-top:2px;color:var(--olive)}
+.voucher-cart{font-size:12px;margin:12px 0;flex-shrink:0}
+.voucher-list{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:2px 5px 4px 2px}
+.voucher-section+.voucher-section{margin-top:23px}
+.voucher-section h3{font-size:14px;font-weight:600;margin-bottom:10px}
+.voucher-section-help{font-size:11px;color:var(--muted);margin:-4px 0 12px}
+.voucher-card{padding:17px;border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;overflow-wrap:anywhere;background:var(--surface)}
+.voucher-best{border-color:var(--olive);background:var(--olive-soft)}
+.voucher-card-heading{display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.voucher-code{font-size:15px;letter-spacing:.05em}
+.voucher-card h4{font-weight:400;font-size:12px;line-height:1.6;margin-top:3px}
+.voucher-card-heading .badge{font-size:10px;white-space:normal;flex-shrink:0}
+.voucher-value{font-size:14px;font-weight:500;margin-top:12px}
+.voucher-conditions{padding-left:16px;font-size:11px;line-height:1.8;color:var(--muted);margin:8px 0 14px}
+.voucher-card-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.voucher-card-footer>strong{font-size:12px;line-height:1.6;color:var(--olive)}
+.voucher-card-footer button{font-size:12px;min-height:44px;padding:9px 15px;flex-shrink:0}
+.voucher-unavailable{background:var(--paper)}
+.voucher-unavailable .voucher-card-footer>strong{color:var(--muted)}
+.voucher-reason{padding:9px 11px;background:var(--danger-soft);color:var(--danger);font-size:11px;margin-bottom:14px}
+.voucher-state{padding:22px 0;color:var(--muted);font-size:13px;line-height:1.8}
+.voucher-state button{margin-top:12px;font-size:12px}
+.voucher-dialog>.error-text{flex-shrink:0;margin-bottom:12px}
+.voucher-disclosure{flex-shrink:0;font-size:10px;line-height:1.8;color:var(--muted);padding-top:14px;border-top:1px solid var(--line);margin-top:12px}
+@media(max-width:480px){.voucher-dialog{padding:18px;max-height:calc(100dvh - 24px);width:calc(100% - 24px)}.voucher-card{padding:13px}.voucher-card-heading{flex-wrap:wrap;gap:6px}.voucher-card-footer{align-items:flex-start;flex-direction:column;gap:9px}.voucher-card-footer button{width:100%}.voucher-value{font-size:13px}}

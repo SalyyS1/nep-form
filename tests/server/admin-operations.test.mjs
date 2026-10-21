@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { setup, register, adminLogin, address, cart, expectedQuote } from './test-helpers.mjs';
+
+test('admin metrics reflect real orders and updates preserve tracking, history and stale form conflicts', async t => {
+  const env = await setup(t); const customer = env.client(); const admin = env.client();
+  await register(customer, 'operations@example.com'); await adminLogin(admin);
+  await customer('/api/cart', 'POST', cart(1));
+  const created = await customer('/api/orders', 'POST', { address, paymentMethod: 'cod', idempotencyKey: 'operations-order', expectedQuote: await expectedQuote(customer) });
+  const order = created.data.order;
+  let data = (await admin('/api/admin')).data;
+  assert.equal(data.stats.revenue, 0); assert.equal(data.stats.unpaidTotal, order.total);
+  assert.equal(data.stats.daily.reduce((sum, d) => sum + d.orders, 0), 1);
+  assert.equal((await customer(`/api/admin/orders/${order.id}`, 'PATCH', { status: 'confirmed' })).status, 403);
+  assert.equal((await admin(`/api/admin/orders/${order.id}`, 'PATCH', { status: 'confirmed', paymentStatus: 'paid', expectedVersion: 1, carrier: 'Nếp giao', trackingCode: 'NEP-123' })).status, 200);
+  assert.equal((await admin(`/api/admin/orders/${order.id}`, 'PATCH', { status: 'packing', expectedVersion: 1 })).status, 409);
+  data = (await admin('/api/admin')).data;
+  assert.equal(data.stats.revenue, order.total); assert.equal(data.stats.unpaidTotal, 0);
+  assert.equal(data.orders[0].trackingCode, 'NEP-123');
+  assert.equal(data.audit[0].target.toStatus, 'confirmed');
+  assert.equal((await customer(`/api/admin/orders/${order.id}/history`)).status, 403);
+  assert.equal((await admin(`/api/admin/orders/${order.id}/history`)).data.events[0].target.trackingCode, 'NEP-123');
+  assert.equal((await customer(`/api/orders/${order.id}`)).data.order.carrier, 'Nếp giao');
+  await admin(`/api/admin/orders/${order.id}`, 'PATCH', { status: 'cancelled', expectedVersion: 2 });
+  data = (await admin('/api/admin')).data;
+  assert.equal(data.stats.revenue, 0); assert.equal(data.stats.reviewCount, 1);
+  assert.equal(data.stats.statuses.cancelled, 1);
+  await env.restart();
+  assert.equal((await admin('/api/admin')).data.orders[0].trackingCode, 'NEP-123');
+});

@@ -1,0 +1,13 @@
+import { resolve } from 'node:path';
+import { embeddedPostgres } from './postgres-test-pool.mjs';
+import { initializePostgres, createAdministrator } from '../../server/postgres-maintenance.mjs';
+import { openPostgresStore } from '../../server/postgres-store.mjs';
+import { startServer } from '../../server/index.mjs';
+if (!process.env.NEP_ISOLATED_PG_DIR) throw new Error('Isolated test database directory required.');
+const pool = await embeddedPostgres(process.env.NEP_ISOLATED_PG_DIR);
+await initializePostgres(pool, { catalogPath: resolve('data/catalog.json'), contactEmail:'owner@example.test' });
+const store = await openPostgresStore({ pool });
+await createAdministrator(store, { email:'owner@example.test', password:'PrivatePassword@2026' });
+const server = await startServer({ pool, port:3008, host:'127.0.0.1', production:true, appOrigin:'https://127.0.0.1:8443' });
+process.once('SIGTERM', () => server.close());
+console.log('Isolated hosted PostgreSQL test API ready.');
